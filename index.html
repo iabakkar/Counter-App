@@ -1,14 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Counter-App</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background-color: lightgray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .heading {
+            margin-bottom: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .counterBox {
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-a;
+            flex-direction: column;
+            padding: 5vw;
+            border-radius: 10px;
+        }
+
+        .counterNumber {
+            margin-bottom: 10px;
+            font-size: 8vw;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        button {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid gray;
+            background-color: rgb(87, 184, 216);
+            color: white;
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .inc:hover,
+        .dec:hover {
+            background-color: rgb(58, 151, 182);
+            cursor: pointer;
+        }
+
+        .res {
+            background-color: rgb(238, 28, 28);
+        }
+
+        .res:hover {
+            background-color: rgb(199, 26, 26);
+            cursor: pointer;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Counter-App</h1>
+    <h1 class="heading">Counter-App</h1>
+    <div class="counterBox">
+        <h1 class="counterNumber">0</h1>
+        <div class="buttonBox">
+            <button class="dec">Decrement</button>
+            <button class="res">Reset</button>
+            <button class="inc">Increment</button>
+        </div>
+    </div>
 </body>
 <script>
-    
+
+
+    let counter = document.querySelector(".counterNumber")
+    let inc = document.querySelector(".inc")
+    let res = document.querySelector(".res")
+    let dec = document.querySelector(".dec")
+
+
+    let count = 0
+
+    inc.addEventListener("click", () => {
+        count++
+        counter.textContent = count
+    })
+    res.addEventListener("click", () => {
+        count = 0
+        counter.textContent = 0
+    })
+    dec.addEventListener("click", () => {
+        if (count > 0) {
+            count--
+            counter.textContent = count
+        }
+    })
+
 </script>
+
 </html>
