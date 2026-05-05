@@ -1,5 +1,3 @@
-# Counter-App
-
 # 🔢 Counter App
 
 A simple and interactive Counter Application built using HTML, CSS, and JavaScript.
@@ -33,4 +31,3 @@ This project helps in understanding:
 1. Click **Increment** to increase number
 2. Click **Decrement** to decrease number
 3. Click **Reset** to set it back to 0
-
